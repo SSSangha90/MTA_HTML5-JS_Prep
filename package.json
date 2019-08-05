@@ -1,7 +1,7 @@
 {
   "name": "mta_html5-js_prep",
   "version": "1.0.0",
-  "description": "MTA Exam prep, HTML5, CSS3, JavaScript & JQuery",
+  "description": "MTA Exam prep, HTML5, CSS3, JavaScript & JQuery.",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
