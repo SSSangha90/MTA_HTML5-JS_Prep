@@ -1,5 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #333333;
 }
 
 table, th, td {
@@ -11,7 +13,7 @@ td {
     padding: 5px;
 }
 
-thead {
+thead, #header, #footer {
     background: #3056A0;
     color: white;
 }
@@ -27,5 +29,24 @@ tfoot {
 
 tbody > tr:nth-child(even) {
     background-color: #E6E6F5
+}
+
+
+#header {
+    text-align: center;
+    line-height: 70px;
+    font-size: 2em;
+}
+
+#contactDetails, #contactList {
+    border: 1px solid #999999;
+    margin: 15px;
+    padding: 15px;
+}
+
+#footer {
+    line-height: 40px;
+    font-size: 1em;
+    text-align: center;
 }
 
