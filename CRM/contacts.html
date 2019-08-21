@@ -15,6 +15,52 @@
 
     <div id="contactDetails">
         <h2>Contact Details</h2>
+        <form method="POST">
+            <div class="formRow">
+                <label for="contactName">Contact Name</label>
+                <input name="contactName" id="contactName" type="text" autofocus/>
+            </div>
+            <div class="formRow">
+                <label for="phoneNumber">Phone Number</label>
+                <input name="phoneNumber" id="phoneNumber" maxlength="11" minlength="11" type="tel"/>
+            </div>
+            <div class="formRow">
+                <label for="emailAddress">Email address</label>
+                <input name="emailAddress" id="emailAddress" type="email"/>
+            </div>
+            <!-------------------------------------------------
+            <div class="formRow">
+                <label for="companyName">Company Name</label>
+                <select name="companyName" id="companyName">
+                    <option value="-1">Please select</option>
+                    <option value="1">ACME Industries</option>
+                    <option value="2">ABC Corp</option>
+                    <option value="3">ZYX Ltd</option>
+                </select>
+            </div>
+            ----------------------------------------------------->
+            <div class="formRow">
+                <label for="companies">Company Name</label>
+                <input list="companies" name="companyName" required>
+                <datalist id="companies">
+                    <option value="0">Please select</option>
+                    <option value="1">ACME Industries</option>
+                    <option value="2">ABC Corp</option>
+                    <option value="3">ZYX Ltd</option>
+                </datalist>
+            </div>
+            <div class="formRow">
+                <label for="notes">Notes</label>
+                <textarea cols="40" rows="6" name="notes"></textarea>
+            </div>
+            <div class="formRow">
+                <label for="lastContacted">Last Contacted</label>
+                <input name="lastContacted" id="lastContacted" type="date"/>
+            </div>
+            <div class="formRow">
+                <input type="submit" style="width: 70px" value="Save">
+            </div>
+        </form>
     </div>
 
     <div id="contactList">
