@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Replace Character in a String</title>
+<script>
+    function strReplace(){
+        var myStr = document.getElementById('myText').innerHTML;
+        var newStr = myStr.replace(/hello/, "is not");
+        
+        // Insert modified string in paragraph
+        document.getElementById("myText").innerHTML = newStr;
+
+        if(newStr != 'hello'){
+            alert("The string doesn't exist");
+        }
+
+    }
+</script>
+</head>
+<body>
+    <p id="myText">JavaScript is a fun language and is a great treat!</p>
+    <button type="button" onclick="strReplace()">Replace</button>
+</body>
+</html>
+
+<!---Write a function which takes user input and deduces the vowels, consonants and numbers from the string-->
