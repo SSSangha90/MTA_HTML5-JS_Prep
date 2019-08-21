@@ -39,7 +39,7 @@ td {
     padding: 5px;
 }
 
-thead, #header, #footer {
+thead, header, footer {
     background: #3056A0;
     color: white;
 }
@@ -58,7 +58,7 @@ tbody > tr:nth-child(even) {
 }
 
 
-#header {
+header {
     text-align: center;
     line-height: 70px;
     font-size: 2em;
@@ -74,7 +74,7 @@ tbody > tr:nth-child(even) {
 /************** FOOTER ******************/
 /****************************************/
 
-#footer {
+footer {
     line-height: 40px;
     font-size: 1em;
     text-align: center;
