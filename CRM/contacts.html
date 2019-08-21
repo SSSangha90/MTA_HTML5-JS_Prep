@@ -22,7 +22,7 @@
             </div>
             <div class="formRow">
                 <label for="phoneNumber">Phone Number</label>
-                <input name="phoneNumber" id="phoneNumber" maxlength="11" minlength="11" type="tel"/>
+                <input name="phoneNumber" id="phoneNumber" pattern="[0-9()]{11,11}" type="tel" class="validated"/>
             </div>
             <div class="formRow">
                 <label for="emailAddress">Email address</label>
@@ -41,7 +41,7 @@
             ----------------------------------------------------->
             <div class="formRow">
                 <label for="companies">Company Name</label>
-                <input list="companies" name="companyName" required>
+                <input list="companies" name="companyName" required class="validated">
                 <datalist id="companies">
                     <option value="0">Please select</option>
                     <option value="1">ACME Industries</option>
@@ -51,7 +51,7 @@
             </div>
             <div class="formRow">
                 <label for="notes">Notes</label>
-                <textarea cols="40" rows="6" name="notes"></textarea>
+                <textarea cols="40" rows="6" name="notes" maxlength="1000"></textarea>
             </div>
             <div class="formRow">
                 <label for="lastContacted">Last Contacted</label>
