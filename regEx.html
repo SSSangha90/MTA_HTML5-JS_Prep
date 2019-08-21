@@ -3,25 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <title>JavaScript Replace Character in a String</title>
+
+<body>
+        <div>
+                <label for="userStr">Enter Sentence</label>
+                <input name="userStr" id="userStr" type="text"/>
+        </div>
+        <div>
+                <input type="submit" style="width: 70px" value="Submit" onclick="deduceString()">
+        </div>
+        <div>
+
+            <div>
+            <h3>Vowels</h3>
+            <p id="Vowels">
+            </p>
+            </div>
+
+            <div>
+            <h3>Consonants</h3>
+            <p id="cons">
+            </p>
+            </div>
+
+            <div>
+            <h3>Numbers</h3>
+            <p id="nums">
+            </p>
+            </div>
+
+        </div>
+</body>
+
 <script>
-    function strReplace(){
-        var myStr = document.getElementById('myText').innerHTML;
-        var newStr = myStr.replace(/hello/, "is not");
-        
-        // Insert modified string in paragraph
-        document.getElementById("myText").innerHTML = newStr;
+    function deduceString(){
 
-        if(newStr != 'hello'){
-            alert("The string doesn't exist");
+            var theStr = document.getElementById('userStr').value;
+
+            var displayVowel = theStr.match(/[aeiou]/gi);
+            var displayCons = theStr.match(/[qwrtypsdfghjklzxcvbnm]/gi);
+            var displayNum = theStr.match(/\d+/g);
+
+            if (displayVowel){
+                var showVowels = document.getElementById('Vowels');
+                showVowels.textContent =  displayVowel;
+            } 
+
+            if (displayCons){
+                var showCons = document.getElementById('cons');
+                showCons.textContent =  displayCons;
+            }
+
+            if (displayNum){
+                var showNum = document.getElementById('nums');
+                showNum.textContent =  displayNum;
+            }
+    
         }
+      
 
-    }
+    
 </script>
 </head>
-<body>
-    <p id="myText">JavaScript is a fun language and is a great treat!</p>
-    <button type="button" onclick="strReplace()">Replace</button>
-</body>
 </html>
 
 <!---Write a function which takes user input and deduces the vowels, consonants and numbers from the string-->
