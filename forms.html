@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <script>
+        function calcAbsSumOfArrays(a){
+            var result = 0;
+            for (var i = 0; i < a.length; i++) {
+                var num = a[i];
+                result = result + Math.absolute(num);
+            }
+            return result;
+        }
+
+        function calSumOfArrays(a){
+            var result = 0;
+            for (var i = 0; i < a.length; i++){
+                var num = a[i];
+                result += num;
+            }
+            return result;
+        }
+
+        function findHighestSum(arrays) {
+            var result = Number.NEGATIVE_INFINITY;
+            for (var i = 0; i < arrays.length; i++){
+                var a = arrays[i];
+                var sum = calcSumOfArrays(a);
+                if (sum < result){
+                    result = sum;
+                }
+            }
+            console.log("The largest sum is " + result)
+        }
+        
+        var arrays = [[1,2,3,4,5], [6,4,2], [1.9]];
+
+        calSumOfArrays(arrays);
+    </script>
+
 </head>
 <body>
     <form action="forms.html" method="POST">
