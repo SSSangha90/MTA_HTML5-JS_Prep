@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Testing JSON</title>
+
+    <script>
+    
+    let o = {
+        studentName: 'William Jones',
+        school: 'Lampton School',
+        grades: [
+            {
+                subject: 'English', grade: 'A'
+            },
+            {
+                subject: 'Algebra', grade: 'B'
+            },
+            {
+                subject: 'Geometry', grade: 'C'
+            }
+        ]
+    }
+    
+    const clone = (obj) => {
+        let cloned = JSON.stringify(obj);
+        console.log(obj)
+    }
+
+    clone(o);
+
+    o.grades.subject = 'French';
+
+    clone(o);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
