@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manipulating DOM</title>
+
+</head>
+<body>
+    <h1 id="mainHeader">Manipulating the DOM</h1>
+    <ol id="daysOfWeek">
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursday</li>
+        <li>Friday</li>
+    </ol>
+</body>
+
+<script>
+    
+        let newLi = document.createElement('li');
+        let saturday = document.createTextNode("saturday");
+        newLi.appendChild(saturday);
+        document.getElementById('daysOfWeek').appendChild(newLi);
+
+        let miniHeader = document.createElement('h4');
+        let miniMsg = document.createTextNode("Appended h4 element below list");
+        miniHeader.appendChild(miniMsg);
+        document.getElementById('mainHeader').appendChild(miniHeader);
+       
+        
+</script>
+</html>
