@@ -36,6 +36,7 @@ $('form[name="companyName"]')
 // and find all option elems gt 0
 companySelector.find('option:gt(0)')
 
-
+// 5. find the odd numbered tr elements in the tbody
+$('tbody tr: odd')
 
 
