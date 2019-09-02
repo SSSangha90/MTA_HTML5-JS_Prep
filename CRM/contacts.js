@@ -21,4 +21,21 @@ const init = () => {
 
 init()
 
+// 1 - select all with classes of overlay
+$('.overlay');
+
+// 2 - select all input fields with name attribute
+$(':input[name]')
+
+// 3 - find form element with name attr = companyName 
+// and assign to var called companySelector
+var companySelector = 
+$('form[name="companyName"]')
+
+// 4 - invoke the find method on companySelector
+// and find all option elems gt 0
+companySelector.find('option:gt(0)')
+
+
+
 
