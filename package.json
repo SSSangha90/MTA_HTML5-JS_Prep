@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SSSangha90/MTA_HTML5-JS_Prep/issues"
   },
-  "homepage": "https://github.com/SSSangha90/MTA_HTML5-JS_Prep#readme"
+  "homepage": "https://github.com/SSSangha90/MTA_HTML5-JS_Prep#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
 }
