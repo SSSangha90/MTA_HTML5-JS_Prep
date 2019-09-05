@@ -37,6 +37,6 @@ $('form[name="companyName"]')
 companySelector.find('option:gt(0)')
 
 // 5. find the odd numbered tr elements in the tbody
-$('tbody tr: odd')
+// $('tbody tr: odd')
 
-
+$(':input[required]').siblings('label').css('color', 'red');
