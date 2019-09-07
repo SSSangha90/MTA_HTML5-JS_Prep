@@ -7,6 +7,7 @@ function contactsScreen(mainID) {
                 return;
             }
 
+            // Check contact name validity
             var contactName = document.getElementById('contactName')
             contactName.oninvalid = function(e) {
 	            e.target.setCustomValidity("");
@@ -19,6 +20,7 @@ function contactsScreen(mainID) {
 	           }
             };
  
+            // check email validity
             var email = document.getElementById('emailAddress')
             email.oninvalid = function(e) {
 	            e.target.setCustomValidity("");
@@ -31,12 +33,14 @@ function contactsScreen(mainID) {
 	            }
             };
 
+            // Display add new contact on click
             document.getElementById('addContact').addEventListener('click', function(event){
                 event.preventDefault();
                 var displayDetails = document.getElementById('contactDetails');
                 displayDetails.style = 'display: block'
             })
 
+            // Hover over notes
             var timeTags = document.getElementsByTagName('time');
             for(let i = 0; i < timeTags.length; i++){
                 timeTags[i].addEventListener('mouseenter', function(event){
