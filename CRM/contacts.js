@@ -6,6 +6,7 @@ function contactsScreen(mainID) {
             if (initialized) {
                 return;
             }
+
             var contactName = document.getElementById('contactName')
             contactName.oninvalid = function(e) {
 	            e.target.setCustomValidity("");
@@ -29,6 +30,23 @@ function contactsScreen(mainID) {
 		             }
 	            }
             };
+
+            document.getElementById('addContact').addEventListener('click', function(event){
+                event.preventDefault();
+                var displayDetails = document.getElementById('contactDetails');
+                displayDetails.style = 'display: block'
+            })
+
+            var timeTags = document.getElementsByTagName('time');
+            for(let i = 0; i < timeTags.length; i++){
+                timeTags[i].addEventListener('mouseenter', function(event){
+                    event.target.nextElementSibling.style.display = 'block';
+                })
+                timeTags[i].addEventListener('mouseleave', function(event){
+                    event.target.nextElementSibling.style.display = 'none';
+                })
+            }
+
             initialized = true;
         }
     };

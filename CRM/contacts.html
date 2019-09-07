@@ -9,8 +9,9 @@
 <body>
 	<header>Contacts</header>
 	<main id="contactScreen">
-	<section id="contactDetails"><h2>Contact details</h2>
-	<form method="post">
+	<section id="contactDetails" style="display: none">
+		<h2>Contact details</h2>
+		<form method="post">
 		<div class="formRow">
 			<label for="contactName">Contact name</label>
 			<input required autofocus autocomplete="off" name="contactName" type="text" class="validated" id="contactName" pattern=".{5,100}"/>
@@ -65,14 +66,20 @@
 				<td>555-642-737</td>
 				<td>william@testing.com</td>
 				<td>ACME Industries</td>
-				<td><time datetime="2014-10-21">2014-10-21</time></td>
+				<td>
+					<time datetime="2014-10-21">2014-10-21</time>
+					<div class="overlay">These are my notes</div>
+				</td>
 			</tr>
 			<tr>
 				<td>Bob Morris</td>
 				<td>555-999-299</td>
 				<td>bob@testing.com</td>
 				<td>ABC Corp</td>
-				<td><time datetime="2014-09-12">2014-09-12</time></td>
+				<td>
+					<time datetime="2014-09-12">2014-09-12</time>
+					<div class="overlay">These are my notes</div>
+				</td>
 			</tr>
 		</tbody>
 		<caption>Sales leads</caption>
