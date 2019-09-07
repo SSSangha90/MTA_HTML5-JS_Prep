@@ -1,117 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="contacts.css">
-    <title>CRM app</title>
+         <meta charset="utf-8">     
+         <title>Contacts</title>
+         <link rel="stylesheet" type="text/css" href="contacts.css">  
+         <script src="contacts.js"></script>		 
 </head>
 <body>
-
-    <header>
-        <h1>Contacts</h1>
-    </header>
-<main id="contactScreen">
-    <section id="contactDetails" style="display: none">
-        <h2>Contact Details</h2>
-        <form method="POST">
-            <div class="formRow">
-                <label for="contactName">Contact Name</label>
-                <input name="contactName" id="contactName" type="text" autofocus/>
-            </div>
-            <div class="formRow">
-                <label for="phoneNumber">Phone Number</label>
-                <input name="phoneNumber" id="phoneNumber" pattern="[0-9()]{11,11}" type="tel" class="validated"/>
-            </div>
-            <div class="formRow">
-                <label for="emailAddress">Email address</label>
-                <input name="emailAddress" id="emailAddress" type="email"/>
-            </div>
-            <!-------------------------------------------------
-            <div class="formRow">
-                <label for="companyName">Company Name</label>
-                <select name="companyName" id="companyName">
-                    <option value="-1">Please select</option>
-                    <option value="1">ACME Industries</option>
-                    <option value="2">ABC Corp</option>
-                    <option value="3">ZYX Ltd</option>
-                </select>
-            </div>
-            ----------------------------------------------------->
-            <div class="formRow">
-                <label for="companies">Company Name</label>
-                <input list="companies" name="companyName" required class="validated">
-                <datalist id="companies">
-                    <option value="0">Please select</option>
-                    <option value="1">ACME Industries</option>
-                    <option value="2">ABC Corp</option>
-                    <option value="3">ZYX Ltd</option>
-                </datalist>
-            </div>
-            <div class="formRow">
-                <label for="notes">Notes</label>
-                <textarea cols="40" rows="6" name="notes" maxlength="1000"></textarea>
-            </div>
-            <div class="formRow">
-                <label for="lastContacted">Last Contacted</label>
-                <input name="lastContacted" id="lastContacted" type="date"/>
-            </div>
-            <div class="formRow">
-                <input type="submit" style="width: 70px" value="Save">
-            </div>
-        </form>
-    </section>
-
-    <section id="contactList">
-    <table>
-        <thead>
-            <tr>
-                <th>Contact name</th>
-                <th>Phone number</th>
-                <th>Email address</th>
-                <th>Company name</th>
-                <th>Last contacted</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>William Smith</td>
-                <td>078-882-8728</td>
-                <td>willaim@testing.com</td>
-                <td>ACME Industries</td>
-                <td>
-                    <time datetime="2018-10-13">2018-10-13</time>
-                    <div class="overlay">These are my notes for William</div>
-                </td>
-            </tr>
-            <tr>
-                <td>Bob Morris</td>
-                <td>079-584-88449</td>
-                <td>bob@testing.com</td>
-                <td>ABC Corp</td>
-                <td>
-                    <time datetime="2019-03-18">2019-03-18</time>
-                    <div class="overlay">These are my notes for Bob</div>
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="5">2 contacts displayed</td>
-            </tr>
-        </tfoot>
-        <caption>Sales leads</caption>
-    </table>
-    <div class="controls">
-        <a href="#" id="addContact">Add New Contact</a>
-    </div>
-    </section>
-</main>
-    <footer>
-        copyright sue-crm @2019
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="contacts.js"></script>
+	<header>Contacts</header>
+	<main id="contactScreen">
+	<section id="contactDetails"><h2>Contact details</h2>
+	<form method="post">
+		<div class="formRow">
+			<label for="contactName">Contact name</label>
+			<input required autofocus autocomplete="off" name="contactName" type="text" class="validated" id="contactName" pattern=".{5,100}"/>
+		</div>
+		<div class="formRow">
+			<label for="phoneNumber">Phone number</label>
+			<input required pattern="[0-9() ]{5,15}" placeholder="Include area code" name="phoneNumber" type="tel"   id="phoneNumber" class="validated" />
+		</div>
+		<div class="formRow">
+			<label for="emailAddress">Email address</label>
+			<input required name="emailAddress" id="emailAddress" type="email" class="validated"/>
+		</div>
+		<div class="formRow">
+			<label for="companyName">Company name</label>
+			<select required name="companyName" class="validated">
+				<option value="">Please select</option>
+				<option value="1">ABC Incorporated</option>
+				<option value="2">XZY Ltd</option>
+				<option value="3">ACME iInternational<option>
+			</select>
+		</div>
+		<div class="formRow">
+			<label for="notes">Notes</label>
+			<textarea cols="40" rows="6" name="notes" class="validated" maxlength="1000"></textarea>
+		</div>
+		<div class="formRow">
+			<label for="lastContacted">Last contacted</label>
+			<input name="lastContacted" type="date" class="validated"/>
+		</div>
+		<div class="formRow">
+			<input style="width:70px" type="submit" value="Save"/>
+		</div>
+	</form>
+	</section>
+	<section id="contactList">
+	<table>
+		<thead>
+			<th>Contact name</th>
+			<th>Phone number</th>
+			<th>Email address</th>
+			<th>Company name</th>
+			<th>Last contacted</th>
+		</thead>
+		<tfoot>
+			<tr>
+				<td colspan="5">2 contacts displayed</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>William Smith</td>
+				<td>555-642-737</td>
+				<td>william@testing.com</td>
+				<td>ACME Industries</td>
+				<td><time datetime="2014-10-21">2014-10-21</time></td>
+			</tr>
+			<tr>
+				<td>Bob Morris</td>
+				<td>555-999-299</td>
+				<td>bob@testing.com</td>
+				<td>ABC Corp</td>
+				<td><time datetime="2014-09-12">2014-09-12</time></td>
+			</tr>
+		</tbody>
+		<caption>Sales leads</caption>
+	</table>
+	<div class="controls">
+			<a href="#" id="addContact">Add New Contact</a>
+	</div>
+	</section>
+	</main>
+	<footer>Copyright 2014</footer>
 </body>
+
+ <script>
+    var mainElement = document.getElementById('contactScreen');
+    var appScreen = contactsScreen(mainElement);
+    appScreen.init();
+ </script>
+
 </html>
+
