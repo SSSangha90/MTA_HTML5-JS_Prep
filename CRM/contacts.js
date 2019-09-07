@@ -7,6 +7,8 @@ function contactsScreen(mainID) {
                 return;
             }
 
+            // finds all the input fields with the required attr and add a placeholder attr with required text
+            $(':input[required]').siblings('label').append($('<span>').text('*').addClass('requiredMarker'));
             // Check contact name validity
             var contactName = document.getElementById('contactName')
             contactName.oninvalid = function(e) {
@@ -52,7 +54,20 @@ function contactsScreen(mainID) {
             }
 
             initialized = true;
+        },
+
+        // jQuery function using each method
+        serializeForm: function() {
+            var inputFields = $(screen).find('form :input');
+            var result = {};
+            $.each(inputFields, function(index, value) {
+                 if ($(value).attr('name')) {
+                     result[$(value).attr('name')] = $(value).val();
+                 }
+            });
+            return result;
         }
+
     };
     
 }
