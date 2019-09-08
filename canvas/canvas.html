@@ -33,6 +33,18 @@ ctx.beginPath();
 ctx.arc(170, 170, 90, 0, 2 * Math.PI, true)
 ctx.fill()
 
+// clearing a portion of the canvas shape
+ctx.clearRect(100,100,20,10)
+
+// creating and adding a linear gradient
+var gradient = ctx.createLinearGradient(50, 0, 350, 0);
+gradient.addColorStop(0.0, 'black');
+gradient.addColorStop(1.0, 'white');
+ctx.fillStyle = gradient;
+ctx.fillRect(200, 250, 150, 50);
+
+
+
 </script>
 
 </body>
