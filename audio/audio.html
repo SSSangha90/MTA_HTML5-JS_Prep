@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Audio</title>
+</head>
+<body>
+    <audio id=audioTrack>
+        <source src="file_example_OOG_2MG.ogg" type="audio/ogg">
+        <source src="file_example_MP3_2MG.mp3" type="audio/mp3">
+            Your browser doesn't support the audio element
+    </audio>
+    <div id="controls">
+        <progress></progress>
+        <div id="buttons" style="padding: 5px;">
+            <a href="#" id="play">Play</a>
+            <a href="#" id="pause">Pause</a>
+            <a href="#" id="stop">Stop</a>
+        </div>
+    </div>
+    <input type="range" min="0" max="100" value="0" id="setLocation">
+    <script>
+        $('audio').on('timeupdate', function(evt){
+            var duration = evt.target.duration;
+            var current = evt.target.currentTime;
+            $('progress').val(current/duration);
+
+            // adding jQuery click listeners to the three hyperlinks
+            $('#play').click(function(evt){
+                evt.preventDefault();
+                $('audio')[0].play();
+            });
+
+            $('#pause').click(function(evt){
+                evt.preventDefault();
+                $('audio')[0].pause();
+            });
+            
+            $('#stop').click(function(evt){
+                evt.preventDefault();
+                $('audio')[0].currentTime = 0;
+                $('audio')[0].pause();
+            });
+
+            // Try it task
+           $('#setLocation').change(function(evt){
+               var val = $(evt.target).val();
+               var duration = $('audio')[0].duration;
+               var location = duration*(parseInt(val)/100);
+               $('audio')[0].currentTime = location;
+               $('audio')[0].play();
+           });
+            
+
+        });
+    </script>
+</body>
+</html>
