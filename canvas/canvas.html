@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas width="800" height="500" id="myCanvas" class="drawText"></canvas>
+    <canvas width="1000" height="800" id="secondCanvas"></canvas>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+
+// rectangle on canvas
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+ctx.fillRect(300, 200, 100, 200);
+ctx.fillStyle = 'blue';
+
+// drawing a triangle on the canvas
+const canvas2 = document.getElementById('secondCanvas');
+const ctz2 = canvas.getContext('2d');
+ctz2.beginPath()
+ctz2.moveTo(100, 20);
+ctz2.lineTo(30, 100);
+ctz2.lineTo(170, 100);
+ctz2.fill();
+
+// circles and curves
+ctx.beginPath();
+ctx.arc(170, 170, 90, 0, 2 * Math.PI, true)
+ctx.fill()
+
+</script>
+
+</body>
+</html>
