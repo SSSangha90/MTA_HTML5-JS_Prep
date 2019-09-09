@@ -33,6 +33,7 @@ input {
 table {
     border: 30px solid transparent;
     border-image: url('asyncJest.png') 30 30 30 30 stretch;
+    box-shadow: 20px 20px 20px #333333;
 }
 
  th, td {
