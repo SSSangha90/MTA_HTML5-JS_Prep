@@ -30,7 +30,12 @@ input {
 /************** TABLE *******************/
 /****************************************/
 
-table, th, td {
+table {
+    border: 30px solid transparent;
+    border-image: url('asyncJest.png') 30 30 30 30 stretch;
+}
+
+ th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
