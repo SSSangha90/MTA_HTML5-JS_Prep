@@ -76,6 +76,10 @@ header {
     padding: 15px;
 }
 
+#contactDetails {
+    background: linear-gradient(90deg, white, rgb(148, 201, 211));
+}
+
 /****************************************/
 /************* VALIDATION ***************/
 /****************************************/
