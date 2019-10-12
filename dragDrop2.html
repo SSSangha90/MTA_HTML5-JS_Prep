@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Picture Drop</title>
+</head>
+<body>
+    <div id="source-container" data-role="drag-drop-target">
+        <img id="castle" src="./images/cardiff-castle2.jpg" draggable="true" class="img-responsive">
+    </div>
+    <div id="target-container" data-role="drag-drop-target"></div>
+</body>
+
+<style>
+
+[data-role = "drag-drop-target"] {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid #000;
+    border-radius: 5px;
+    width: 1000px;
+    height: 700px;
+}
+
+.img-responsive {
+    width: 1000px;
+    height: 700px;
+}
+
+.over {
+    background: #ffc;
+}
+
+[draggable="true"] {
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: element;
+}
+
+.drag {
+    opacity: 0.25;;
+}
+
+</style>
+
+<script>
+
+var dragStart = function(e){
+    try{
+        e.dataTransfer.setData('text/plain', e.target.id)
+    } catch{
+        e.dataTransfer.setData('Text', e.target.id)
+    }
+}
+
+var cancel = function(e){
+    if (e.preventDefault){
+        e.preventDefault();
+    }
+    if (e.stopPropagation){
+        e.stopPropagation();
+    }
+    return false;
+}
+
+var dropped = function(e){
+    var id;
+    cancel(e);
+
+    try {
+        id = e.dataTransfer.getData('text/plain');
+    } catch(ex) {
+        id = e.dataTransfer.getData('Text');
+    }
+    e.target.appendChild(document.querySelector('#' + id));
+}
+
+var img = document.querySelector('#castle');
+img.addEventListener('dragstart', dragStart, false);
+
+var target = document.querySelector('#target-container');
+target.addEventListener('drop', dropped, false);
+target.addEventListener('dragenter', cancel, false);
+target.addEventListener('dragover', cancel, false);
+
+</script>
+
+</html>
