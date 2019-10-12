@@ -7,11 +7,14 @@
     <title>Progress Bars</title>
 
 <script>
-    setInterval(updateProgressBar, 200);
+    setInterval(updateProgressBar, 100);
 
     function updateProgressBar(){
         var progressBar = document.getElementById('progressBar');
         progressBar.value += 1;
+        if(progressBar.value == '100'){
+            progressBar.value -= 100;
+        }
     }
 </script>
 
@@ -34,13 +37,13 @@
     <p>Meter value as a percentage.</p>
     <meter value="0.6">60%</meter>
     <p>Specifying a possible range, below the range:</p>
-    <meter value="1" high="8" low="3" min="0" max="10">6 out of 10</meter>
+    <meter value="2" high="8" low="3" min="0" max="10">6 out of 10</meter>
     <p>Possible range above the Max</p>
     <meter low="60" high="80" max="100" value="95"></meter>
     <p>Progress bar</p>
     <progress id="progressBar" value="20" max="100" min="0"></progress>
     <p>Range Element - form input type</p>
-    0%<input type="range" name="percentComplete" min="0" max="100" step="5" value="50">100%
+    0%<input type="range" name="percentComplete" min="0" max="100" step="20" value="50">100%
     <br>
     <p>Patient's heart rate</p>
     <meter max="200" min="0" low="60" high="100" value="70"></meter>
