@@ -7,7 +7,7 @@
     <title>Canvas</title>
 </head>
 <body>
-    <canvas width="800" height="500" id="myCanvas" class="drawText"></canvas>
+    <canvas width="1800" height="1000" id="myCanvas" class="drawText"></canvas>
     <canvas width="1000" height="800" id="secondCanvas"></canvas>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -16,16 +16,16 @@
 // rectangle on canvas
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
-ctx.fillRect(300, 200, 100, 200);
-ctx.fillStyle = 'blue';
+ctx.fillRect(400, 300, 200, 100);
+ctx.fillStyle = 'green';
 
 // drawing a triangle on the canvas
 const canvas2 = document.getElementById('secondCanvas');
 const ctz2 = canvas.getContext('2d');
 ctz2.beginPath()
-ctz2.moveTo(100, 20);
-ctz2.lineTo(30, 100);
-ctz2.lineTo(170, 100);
+ctz2.moveTo(10, 20);
+ctz2.lineTo(20, 70);
+ctz2.lineTo(130, 80);
 ctz2.fill();
 
 // circles and curves
