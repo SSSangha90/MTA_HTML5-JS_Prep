@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas2</title>
+</head>
+<body>
+    <canvas width="1400" height="700" id="myCanvas" style="border:5px solid #3300ff"></canvas>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+
+// Draw Text
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Hello Sukhveer", 20, 60);
+
+// Stroke Text
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Hello Sukhveer", 40, 90);
+
+// Creating a circular gradient
+// Create gradient
+var grd = ctx.createRadialGradient(100,100,5,90,60,100);
+grd.addColorStop(0,"red");
+grd.addColorStop(0.5, "orange");
+grd.addColorStop(1,"white");
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(100,100,50,30);
+
+
+
+
+</script>
+
+</body>
+</html>
